@@ -13,9 +13,9 @@ import UserPerformancesFormater from './DataFormaters/UserPerformancesFormater.j
  * It takes a userId, gets some data from an API, formats it, and returns it.
  * @returns An array of objects with user main datas
  */
-export async function userHeaderData() {
+export async function userHeaderData(id) {
   let mainDatas = []
-  mainDatas = await GetMainData()
+  mainDatas = await GetMainData(id)
   console.log(mainDatas)
   const userData = new MainDataFormater(mainDatas)
   console.log(userData)
@@ -26,9 +26,9 @@ export async function userHeaderData() {
  * It's a function that returns a promise that resolves to an object that contains an array of objects.
  * @returns An array of objects with user sessions datas
  */
-export async function userSessionsData() {
+export async function userSessionsData(id) {
   let sessionsDatas = []
-  sessionsDatas = await GetUserAverageSessions()
+  sessionsDatas = await GetUserAverageSessions(id)
   //console.log(sessionsDatas)
   const getSessions = new UserSessionsFormater(sessionsDatas)
   //console.log(getSessions)

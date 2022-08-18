@@ -10,6 +10,7 @@ import App from './App';
  * @author Christelle Philippe
  * @see <a href="https://christelle74.github.io/PhilippeChristelle_12_SportSee/" target="_blank"> repo Git </a>
  */
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

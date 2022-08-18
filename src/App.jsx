@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Header from './components/Header'
 import VerticalNavigation from './components/VerticalNavigation'
 import Error from './pages/Error'
@@ -11,16 +11,19 @@ import Home from './pages/Home'
  * @returns App component
  */
 const App = () => {
+
   return (
+     
     <Router>
         <Header/>
         <VerticalNavigation/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/user/:userId" element={<Dashboard/>}/> 
+          <Route path="/user/:id" element={<Dashboard/>}/> 
           <Route path="*" element={<Error/>} />
         </Routes>
     </Router>
+    
   )
 }
 
