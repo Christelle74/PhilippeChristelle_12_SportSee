@@ -29,13 +29,13 @@ function Dashboard() {
     const navigate = useNavigate()
     
     
-    const [datas, setDatas]=useState()
+    const [datas, setDatas]=useState([])
     console.log(datas)
-    const [activity, setActivity] = useState()
+    const [activity, setActivity] = useState([])
     //console.log(activity)
-    const [performance, setPerformance] = useState()
+    const [performance, setPerformance] = useState([])
     //console.log(performance)
-    const [session, setSession]=useState()
+    const [session, setSession]=useState([])
     //console.log(session)
    // const [isLoading, setIsLoading]=useState(true)
 
@@ -44,7 +44,7 @@ function Dashboard() {
         (async()=>{
             try{
                 const userDatas =  await userHeaderData(id);
-                const userActivity = await userActivitiesData( id);
+                const userActivity = await userActivitiesData(id);
                 const userPerformance = await userPerformancesData(id);
                 const userSessions = await userSessionsData(id);
                         
