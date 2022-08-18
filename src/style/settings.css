@@ -1,0 +1,24 @@
+
+* {
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box; 
+  }
+  
+html, body{ 
+    font-family:  'Roboto', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+
+li{
+    list-style-type: none;
+}
+
+
+#root{
+  flex:1;
+}

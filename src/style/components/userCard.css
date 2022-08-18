@@ -1,0 +1,75 @@
+
+.connectPage{
+    margin: 100px 90px 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userCards{
+    margin-top: 100px ;
+    display: flex;
+    gap: 30px;
+}
+
+
+.userCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 12rem;
+    height:12rem;
+    border-radius: 10px;
+    background-color: #E60000;
+}
+.userCard:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #E60000;
+    opacity : 0.5;
+}
+.userCard img{
+    width: 100%;
+    height: 12rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.userCard p{
+    display: flex;
+    position: absolute;
+    left:50px;
+    color: black;
+}
+
+/* --------------------RESPONSIVE---------------- */
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .userCard{
+        width: 10rem;
+        height:10rem;
+    }
+
+    .userCard img{
+        height: 10rem;
+    }
+    .userCard p{
+        left:35px;
+    }
+} 
+
+@media screen and (min-width: 376px) and (max-width: 768px){
+    .userCard{
+        width: 10rem;
+        height:10rem;
+    }
+    .userCards{
+        margin-top: 50px ;
+        flex-direction: column;
+        gap: 45px;
+    }
+    .userCard img{
+        height: 10rem;
+    }
+    .userCard p{
+        left:35px;
+    }
+} 

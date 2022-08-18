@@ -1,0 +1,136 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.card{
+    width: 258px;
+    height: 124px;
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.cardImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    margin: 32px;
+}
+
+.cardNumber{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 51px;
+}
+
+.cardUnit{
+    color: #282D30;
+    font-size: 20px;
+    font-weight: 700;
+}
+.cardNumber p{
+    color: #74798C;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+
+/* --------------------RESPONSIVE---------------- */
+    @media screen and (min-width : 993px) and (max-width: 1220px){
+        .cards{
+            width: 20%;
+        }       
+        
+        .card{
+            width: 100%;
+        }
+        
+        .cardImage{
+            width: 50px;
+            height: 50px;
+            margin: 24px;
+        }
+        
+        .cardNumber{
+            height: 38px;
+        }
+        
+        .cardUnit{
+            font-size: 14px;
+        }
+        .cardNumber p{
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    } 
+    
+    
+    @media screen and (min-width: 769px) and (max-width: 992px){
+        .cards{
+            width: 20%;
+        }  
+        
+        .card{
+            width: 100%
+        }
+        
+        .cardImage{
+            width: 40px;
+            height: 40px;
+            margin: 16px;
+        }
+        
+        .cardNumber{
+            height: 30px;
+        }
+        
+        .cardUnit{
+            font-size: 12px;
+        }
+        .cardNumber p{
+            font-size: 10px;
+            margin-top: 5px;
+        }
+    } 
+    
+    @media screen and (min-width: 376px) and (max-width: 768px){
+        .cards{
+            flex-direction: row;
+            gap: 5px;
+            width: 100%;
+        }
+        
+        .card{
+            width: 250px;  
+            height: 80px;  
+            margin-top: 20px;  
+        }
+                
+        .cardImage{
+            width: 30px;
+            height: 30px;
+            margin: 16px;
+        }
+        
+        .cardNumber{
+            height: 40px;
+        }
+        
+        .cardUnit{
+            font-size: 14px;
+        }
+        .cardNumber p{
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    } 

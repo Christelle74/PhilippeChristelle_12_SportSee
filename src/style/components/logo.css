@@ -1,0 +1,28 @@
+/* .logo{
+    width: 178px;
+    height: 60.93px;
+} */
+
+.logo img{
+    height:58px;
+}
+
+/* ----------------RESPONSIVE-------------- */
+@media screen and (min-width : 993px) and (max-width: 1220px){
+    .logo img{
+        height:50px;
+    }
+} 
+
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .logo img{
+        height:42px;
+    }
+} 
+
+@media screen and (min-width: 376px) and (max-width: 768px){
+    .logo img{
+        height:34px;
+    }
+} 

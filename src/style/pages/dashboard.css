@@ -1,0 +1,100 @@
+.dashboard{
+    margin: 68px 90px 0 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardHeader{
+    margin-bottom: 77px;
+}
+.dashboardHeader h1{
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.userName{
+    color:#FF0101;
+}
+.dashboardHeader p{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 24px;
+}
+
+.dashboardContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 31px;
+}
+
+/* --------------------RESPONSIVE---------------- */
+@media screen and (min-width : 993px) and (max-width: 1220px){
+    .dashboard{
+        margin: 60px 80px 0 180px;
+    }
+    
+    .dashboardHeader{
+        margin-bottom: 70px;
+    }
+
+    .dashboardHeader h1{
+        font-size: 40px;
+    }
+    
+    .dashboardHeader p{
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .dashboardContent{
+        gap: 20px;
+    }
+} 
+
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .dashboard{
+        margin: 50px 70px 0 180px;
+    }
+    
+    .dashboardHeader{
+        margin-bottom: 60px;
+    }
+    .dashboardHeader h1{
+        font-size: 30px;
+    }
+    
+    .dashboardHeader p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 18px;
+    }
+    .dashboardContent{
+        gap: 14px;
+    }
+} 
+
+@media screen and (min-width: 376px) and (max-width: 768px){
+    .dashboard{
+        margin: 40px 30px 0 150px;
+    }
+    
+    .dashboardHeader{
+        margin-bottom: 50px;
+    }
+    .dashboardHeader h1{
+        font-size: 20px;
+    }
+    .dashboardHeader p{
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 16px;
+    }
+    .dashboardContent{
+        gap: 10px;
+        display: block;
+    }
+} 
+
+

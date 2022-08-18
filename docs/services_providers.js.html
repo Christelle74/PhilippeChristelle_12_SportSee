@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>services/providers.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a></li><li></li><li></li><li></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Cards">Cards</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#DailyActivityGraph">DailyActivityGraph</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GetMainData">GetMainData</a></li><li><a href="global.html#GetUserActivities">GetUserActivities</a></li><li><a href="global.html#GetUserAverageSessions">GetUserAverageSessions</a></li><li><a href="global.html#GetUserPerformance">GetUserPerformance</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Logo">Logo</a></li><li><a href="global.html#PerformanceGraph">PerformanceGraph</a></li><li><a href="global.html#ScoreGraph">ScoreGraph</a></li><li><a href="global.html#SessionsGraph">SessionsGraph</a></li><li><a href="global.html#userActivitiesData">userActivitiesData</a></li><li><a href="global.html#UserCard">UserCard</a></li><li><a href="global.html#userHeaderData">userHeaderData</a></li><li><a href="global.html#userPerformancesData">userPerformancesData</a></li><li><a href="global.html#userSessionsData">userSessionsData</a></li><li><a href="global.html#VerticalNavigation">VerticalNavigation</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">services/providers.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {
+  GetMainData,
+  GetUserAverageSessions,
+  GetUserActivities,
+  GetUserPerformance,
+} from './fetch.js'
+import MainDataFormater from './DataFormaters/MainDataFormater.js'
+import UserSessionsFormater from './DataFormaters/UserSessionsFormater.js'
+import UserActivitiesFormater from './DataFormaters/UserActivitiesFormater.js'
+import UserPerformancesFormater from './DataFormaters/UserPerformancesFormater.js'
+
+/**
+ * It takes a userId, gets some data from an API, formats it, and returns it.
+ * @returns An array of objects with user main datas
+ */
+export async function userHeaderData() {
+  let mainDatas = []
+  mainDatas = await GetMainData()
+  //console.log(mainDatas)
+  const userData = new MainDataFormater(mainDatas)
+  //console.log(userData)
+  return userData
+}
+
+/**
+ * It's a function that returns a promise that resolves to an object that contains an array of objects.
+ * @returns An array of objects with user sessions datas
+ */
+export async function userSessionsData() {
+  let sessionsDatas = []
+  sessionsDatas = await GetUserAverageSessions()
+  //console.log(sessionsDatas)
+  const getSessions = new UserSessionsFormater(sessionsDatas)
+  //console.log(getSessions)
+  return getSessions
+}
+
+/**
+ * It's a function that returns a promise that resolves to an object that contains an array of objects.
+ * @returns An array of objects with user activity datas
+ */
+export async function userActivitiesData() {
+  let activitiesDatas = []
+  activitiesDatas = await GetUserActivities()
+  //console.log(activitiesDatas)
+  const getActivities = new UserActivitiesFormater(activitiesDatas)
+  //console.log(getActivities)
+  return getActivities
+}
+
+/**
+ * It's a function that returns a promise that resolves to an object that contains an array of objects.
+ * @returns An array of objects with user performances datas
+ */
+export async function userPerformancesData() {
+  let performancesDatas = []
+  performancesDatas = await GetUserPerformance()
+  //console.log(performancesDatas)
+  const getPerformances = new UserPerformancesFormater(performancesDatas)
+  //console.log(getPerformances)
+  return getPerformances
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Wed Aug 17 2022 16:07:36 GMT+0200 (heure d’été d’Europe centrale) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
