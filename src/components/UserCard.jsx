@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 /**
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
  * @returns {JSX.Element} UserCard component
  */
 const UserCard = (data) => {
-   console.log(data)
+    console.log(data)
     return (
         <Link to={`/user/${data.id}`} className='userCard'>
             <li >
@@ -22,7 +22,7 @@ const UserCard = (data) => {
 
 export default UserCard;
 
-// //Proptypes
-// UserCard.propTypes = {
-//     data: PropTypes.object.isRequired,
-// }
+//Proptypes
+UserCard.propTypes = {
+    data: PropTypes.object.isRequired,
+}

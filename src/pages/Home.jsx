@@ -5,17 +5,13 @@ import UserCard from '../components/UserCard';
 import Homme from "../assets/icones/avatarHomme.png"
 import Femme from "../assets/icones/avatarFemme.png"
 
- 
+
 /**
  * Display the home page 
  * @component
  * @returns {JSX.Element} Home component
  */
-
-
-
 const Home = () => {
-
     return (
         <div className='main'>
             

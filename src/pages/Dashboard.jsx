@@ -24,7 +24,7 @@ import proteinIcon from '../assets/icones/proteinIcon.png';
  * @returns {JSX.Element} Dashboard component
  */
 function Dashboard() {
-    const {id} = useParams();
+    const {mockedDatas,id} = useParams();
     console.log(id)
     const navigate = useNavigate()
     
@@ -37,23 +37,23 @@ function Dashboard() {
     //console.log(performance)
     const [session, setSession]=useState([])
     //console.log(session)
-   // const [isLoading, setIsLoading]=useState(true)
+   const [isLoading, setIsLoading]=useState(true)
 
 
     useEffect(()=>{
         (async()=>{
             try{
-                const userDatas =  await userHeaderData(id);
-                const userActivity = await userActivitiesData(id);
-                const userPerformance = await userPerformancesData(id);
-                const userSessions = await userSessionsData(id);
+                const userDatas =  await userHeaderData(mockedDatas, id);
+                const userActivity = await userActivitiesData(mockedDatas, id);
+                const userPerformance = await userPerformancesData(mockedDatas, id);
+                const userSessions = await userSessionsData(mockedDatas, id);
                         
                 setDatas(userDatas)
                 console.log("user",userDatas)
                 setActivity(userActivity)
                 setPerformance(userPerformance)
                 setSession(userSessions)
-                //setIsLoading(false)
+                setIsLoading(false)
 
             }catch(error) {
                 console.log('=====error=====', error)
@@ -61,13 +61,13 @@ function Dashboard() {
             }
         })
         ()
-    }, [navigate, id]);
+    }, [navigate, id, mockedDatas]);
 
 
     return (
         <div className='dashboard'>
-            {/* {isLoading ? "Loading..." :
-            (  */}
+             {isLoading ? "Loading..." :
+            ( 
             <>
             <div className='dashboardHeader'>
                 <h1>Bonjour{' '}
@@ -95,7 +95,7 @@ function Dashboard() {
                 </div>
             </div>
             </>    
-             {/* )}  */}
+              )}  
         </div>
     );
 };

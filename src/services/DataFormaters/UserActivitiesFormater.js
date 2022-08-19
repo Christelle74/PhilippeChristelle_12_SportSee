@@ -17,7 +17,7 @@ export default class UserActivitiesFormater {
       calories: session.calories,
       day: (index + 1).toString(),
     }))
-    //console.log(this.sessions)
+    console.log(this.sessions)
     //console.log(this.id)
   }
 }

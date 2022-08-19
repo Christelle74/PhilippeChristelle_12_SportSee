@@ -5,22 +5,35 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+s
+#SportSee
 
-# Sleep Well Documentation
+## Presentation
 
-Author : Christelle Philippe
+SportSee project is an application for sportive people that want to follow their daily progress through analytics dashboard.
 
-## Contents
+## 2.1 Prerequisites
 
-This documentation highlights the most important elements to **install** and to **configure** your app.
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [REACT (version 17.0.2)] is recommanded to run charts correctly
+- Recharts
+
+If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
 
 ## Installing the app
 
-- Fork and clone the repository : https://github.com/Christelle74/PhilippeChristelle_12_SportSee.git
+- Clone the repository : https://github.com/Christelle74/PhilippeChristelle_12_SportSee.git
 - Run the `yarn` command will allow you to install the dependencies
 - The `yarn start` command will allow you to run the application.
 
-  ...
+- Backend : `cd BackEnd` command then `yarn dev`command
+
+### Author
+
+Christelle Philippe
+
+---
 
 # Getting Started with Create React App
 

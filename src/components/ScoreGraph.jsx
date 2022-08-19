@@ -1,6 +1,6 @@
 import React from 'react';
 import { RadialBarChart, RadialBar,  ResponsiveContainer, PolarAngleAxis } from 'recharts';
-
+import PropTypes from 'prop-types'
 
 
 
@@ -11,14 +11,13 @@ import { RadialBarChart, RadialBar,  ResponsiveContainer, PolarAngleAxis } from 
  * @returns {JSX.Element} ScoreGraph component
  */
 const ScoreGraph = ({score}) => {
-//console.log(score)
+  //console.log(score)
   const data = 
     [{
       uv: score,
       fill: '#E60000'
     }]
 
-//console.log(data)
     return (
       <div className="squareGraph">
         <ResponsiveContainer  width="100%" aspect={1}>
@@ -33,9 +32,13 @@ const ScoreGraph = ({score}) => {
                     Score </text>
           </RadialBarChart>
         </ResponsiveContainer>
-        
       </div>
     );
 };
 
 export default ScoreGraph;
+
+//Proptypes
+ScoreGraph.propTypes = {
+  score: PropTypes.number.isRequired
+}

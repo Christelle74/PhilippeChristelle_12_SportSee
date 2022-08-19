@@ -30,7 +30,7 @@ export const GetUserActivities = async (mockedDatas, id) => {
   let url = `http://localhost:3000/user/${id}/activity`
 
   if (mockedDatas) {
-    url = '/mockedOnePersonData.json'
+    url = '/mockedActivityData.json'
   }
   try {
     const response = await fetch(url)
@@ -52,7 +52,7 @@ export const GetUserAverageSessions = async (mockedDatas, id) => {
   let url = `http://localhost:3000/user/${id}/average-sessions`
 
   if (mockedDatas) {
-    url = '/mockedOnePersonData.json'
+    url = '/mockedAverageSessionData.json'
   }
 
   try {
@@ -75,7 +75,7 @@ export const GetUserPerformance = async (mockedDatas, id) => {
   let url = `http://localhost:3000/user/${id}/performance`
 
   if (mockedDatas) {
-    url = '/mockedOnePersonData.json'
+    url = '/mockedPerformanceData.json'
   }
   try {
     const response = await fetch(url)

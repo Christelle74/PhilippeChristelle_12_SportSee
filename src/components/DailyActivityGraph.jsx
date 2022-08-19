@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar,  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
-
+import PropTypes from 'prop-types'
 
 /**
  * 
@@ -62,9 +62,15 @@ const DailyActivityGraph = ({activity}) => {
                 <text className='graphTitle' x="5%" y="15%" width={147} height={48}textAnchor="start" dominantBaseline="middle"  fill="#20253A" style={{ fontWeight:500}} >
                         Activité quotidienne </text>
             </BarChart>
-         </ResponsiveContainer> 
+        </ResponsiveContainer> 
     </div>
     );
 };
 
 export default DailyActivityGraph;
+
+
+//Proptypes
+DailyActivityGraph.propTypes = {
+    activity: PropTypes.array.isRequired
+}

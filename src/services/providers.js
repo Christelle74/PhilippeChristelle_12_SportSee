@@ -13,9 +13,13 @@ import UserPerformancesFormater from './DataFormaters/UserPerformancesFormater.j
  * It takes a userId, gets some data from an API, formats it, and returns it.
  * @returns An array of objects with user main datas
  */
-export async function userHeaderData(id) {
+export async function userHeaderData(mockedDatas, id) {
   let mainDatas = []
-  mainDatas = await GetMainData(id)
+
+  mockedDatas
+    ? (mainDatas = await GetMainData(true, id))
+    : (mainDatas = await GetMainData(false, id))
+
   console.log(mainDatas)
   const userData = new MainDataFormater(mainDatas)
   console.log(userData)
@@ -26,12 +30,16 @@ export async function userHeaderData(id) {
  * It's a function that returns a promise that resolves to an object that contains an array of objects.
  * @returns An array of objects with user sessions datas
  */
-export async function userSessionsData(id) {
+export async function userSessionsData(mockedDatas, id) {
   let sessionsDatas = []
-  sessionsDatas = await GetUserAverageSessions(id)
-  //console.log(sessionsDatas)
+
+  mockedDatas
+    ? (sessionsDatas = await GetUserAverageSessions(true, id))
+    : (sessionsDatas = await GetUserAverageSessions(false, id))
+  //sessionsDatas = await GetUserAverageSessions(id)
+  console.log(sessionsDatas)
   const getSessions = new UserSessionsFormater(sessionsDatas)
-  //console.log(getSessions)
+  console.log(getSessions)
   return getSessions
 }
 
@@ -39,12 +47,16 @@ export async function userSessionsData(id) {
  * It's a function that returns a promise that resolves to an object that contains an array of objects.
  * @returns An array of objects with user activity datas
  */
-export async function userActivitiesData(id) {
+export async function userActivitiesData(mockedDatas, id) {
   let activitiesDatas = []
-  activitiesDatas = await GetUserActivities(id)
-  //console.log(activitiesDatas)
+
+  mockedDatas
+    ? (activitiesDatas = await GetUserActivities(true, id))
+    : (activitiesDatas = await GetUserActivities(false, id))
+  //activitiesDatas = await GetUserActivities(id)
+  console.log(activitiesDatas)
   const getActivities = new UserActivitiesFormater(activitiesDatas)
-  //console.log(getActivities)
+  console.log(getActivities)
   return getActivities
 }
 
@@ -52,11 +64,16 @@ export async function userActivitiesData(id) {
  * It's a function that returns a promise that resolves to an object that contains an array of objects.
  * @returns An array of objects with user performances datas
  */
-export async function userPerformancesData(id) {
+export async function userPerformancesData(mockedDatas, id) {
   let performancesDatas = []
-  performancesDatas = await GetUserPerformance(id)
-  //console.log(performancesDatas)
+
+  mockedDatas
+    ? (performancesDatas = await GetUserPerformance(true, id))
+    : (performancesDatas = await GetUserPerformance(false, id))
+
+  //performancesDatas = await GetUserPerformance(id)
+  console.log(performancesDatas)
   const getPerformances = new UserPerformancesFormater(performancesDatas)
-  //console.log(getPerformances)
+  console.log(getPerformances)
   return getPerformances
 }

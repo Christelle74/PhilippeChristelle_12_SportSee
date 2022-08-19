@@ -9,6 +9,8 @@ import {
     Tooltip,
     Rectangle
 } from "recharts"; 
+import PropTypes from 'prop-types'
+
 
 
 /**
@@ -75,3 +77,8 @@ const SessionsGraph = ({sessions}) => {
 };
 
 export default SessionsGraph;
+
+//Proptypes
+SessionsGraph.propTypes = {
+    sessions: PropTypes.array.isRequired
+}

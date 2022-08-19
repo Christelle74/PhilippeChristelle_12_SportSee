@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 /**
- * Creation of 404 erro page with link back to home page 
+ * Creation of 404 error page with link back to home page 
  * @component
  * @returns {JSX.Element} Error component
  */
