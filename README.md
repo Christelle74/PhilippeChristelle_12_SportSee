@@ -5,31 +5,40 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
-s
-#SportSee
+
+---
+
+![logo](src/assets/logo.png)
 
 ## Presentation
 
 SportSee project is an application for sportive people that want to follow their daily progress through analytics dashboard.
 
-## 2.1 Prerequisites
+## Prerequisites
 
-- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/)
-- [REACT (version 17.0.2)] is recommanded to run charts correctly
+- [NodeJS (**version 16.15.0**)](https://nodejs.org/en/)
+- [NPM (**version 8.5.5**)](https://www.npmjs.com/)
+- [Yarn (**version 1.22.18**)](https://yarnpkg.com/)
+- [REACT (**version 17.0.2**)](https://en.reactjs.org/) is recommanded to run charts correctly
 - Recharts
+- VsCode
 
 If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
 
 ## Installing the app
 
-- Clone the repository : https://github.com/Christelle74/PhilippeChristelle_12_SportSee.git
+- Forke and clone the repository : https://github.com/Christelle74/PhilippeChristelle_12_SportSee.git
 - Run the `yarn` command will allow you to install the dependencies
-- The `yarn start` command will allow you to run the application.
 
-- Backend : `cd BackEnd` command then `yarn dev`command
+- Backend :
+  open a new terminal and run `cd BackEnd` command,
+  then run `yarn dev`command
+  the backend will open http://localhost:3000
 
-### Author
+- FrontEnd:
+  open a new terminal, then run the `yarn start` command will allow you to run the application on http://localhost:3001
+
+## Author
 
 Christelle Philippe
 

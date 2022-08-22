@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 
 /**
  * @component
- * @param {Array} data - 
+ * @param {Object} data - 
  * @returns {JSX.Element} UserCard component
  */
 const UserCard = (data) => {
-    console.log(data)
+    //console.log(data)
     return (
         <Link to={`/user/${data.id}`} className='userCard'>
             <li >
@@ -24,5 +24,5 @@ export default UserCard;
 
 //Proptypes
 UserCard.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object
 }

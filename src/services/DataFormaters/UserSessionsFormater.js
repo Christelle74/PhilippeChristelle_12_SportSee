@@ -7,10 +7,10 @@ export default class UserSessionsFormater {
    * The function takes in an object, and then assigns the values of the object to the properties of
    * the class.
    * @param {Object} sessions - user sessions datas
-   * @param {Number} id - user id
+   * @param {Number} userId - user id
    */
-  constructor({ sessions, id }) {
-    this.id = id
+  constructor({ sessions, userId }) {
+    this.id = userId
     this.sessions = this.SessionDay(sessions.day)
     this.sessionsData = sessions.map((session, index) => ({
       ...session,

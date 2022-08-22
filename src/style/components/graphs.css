@@ -92,7 +92,7 @@
 @media screen and (min-width : 993px) and (max-width: 1220px){
     .graphContent{
         gap:20px;
-        width:80%;
+        width:75%;
     }
     
     .otherGraph{
@@ -111,8 +111,8 @@
 
 @media screen and (min-width: 769px) and (max-width: 992px){
     .graphContent{
-        width: 80%;
-        gap:15px;
+        width: 75%;
+        gap:20px;
     }
     
     .otherGraph{
@@ -124,7 +124,7 @@
     }
     
     .scoreSize{
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .activityLegend{

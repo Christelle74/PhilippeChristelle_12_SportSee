@@ -25,12 +25,12 @@ import proteinIcon from '../assets/icones/proteinIcon.png';
  */
 function Dashboard() {
     const {mockedDatas,id} = useParams();
-    console.log(id)
+    //console.log(id)
     const navigate = useNavigate()
     
     
     const [datas, setDatas]=useState([])
-    console.log(datas)
+    //console.log(datas)
     const [activity, setActivity] = useState([])
     //console.log(activity)
     const [performance, setPerformance] = useState([])
@@ -49,7 +49,7 @@ function Dashboard() {
                 const userSessions = await userSessionsData(mockedDatas, id);
                         
                 setDatas(userDatas)
-                console.log("user",userDatas)
+                //console.log("user",userDatas)
                 setActivity(userActivity)
                 setPerformance(userPerformance)
                 setSession(userSessions)
@@ -66,7 +66,7 @@ function Dashboard() {
 
     return (
         <div className='dashboard'>
-             {isLoading ? "Loading..." :
+            {isLoading ? "Loading..." :
             ( 
             <>
             <div className='dashboardHeader'>
@@ -75,7 +75,6 @@ function Dashboard() {
                 </h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </div>
-
             <div className='dashboardContent'>
                 <div className='graphContent'>
                     <div className='dailyActivityGraph'>
@@ -95,7 +94,7 @@ function Dashboard() {
                 </div>
             </div>
             </>    
-              )}  
+            )}  
         </div>
     );
 };

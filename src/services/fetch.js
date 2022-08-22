@@ -13,7 +13,7 @@ export const GetMainData = async (mockedDatas, id) => {
   try {
     const response = await fetch(url)
     const mainData = await response.json()
-    console.log(mainData.data)
+    //console.log(mainData.data)
     return mainData.data
   } catch (error) {
     console.log('=====error=====', error)
