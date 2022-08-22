@@ -1,11 +1,11 @@
 .dashboard{
-    margin: 68px 90px 0 200px;
+    margin: 50px 90px 0 200px;
     display: flex;
     flex-direction: column;
 }
 
 .dashboardHeader{
-    margin-bottom: 77px;
+    margin-bottom: 68px;
 }
 .dashboardHeader h1{
     font-size: 48px;
@@ -34,10 +34,6 @@
         margin: 60px 80px 0 180px;
     }
     
-    .dashboardHeader{
-        margin-bottom: 70px;
-    }
-
     .dashboardHeader h1{
         font-size: 40px;
     }
