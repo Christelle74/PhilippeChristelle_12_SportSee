@@ -28,16 +28,11 @@ function Dashboard() {
     const {id} = useParams();
     console.log(id)
     const navigate = useNavigate()
-    
-    
+
     const [datas, setDatas]=useState({})
-    //console.log(datas)
     const [activity, setActivity] = useState({})
-    //console.log(activity)
     const [performance, setPerformance] = useState({})
-    //console.log(performance)
     const [session, setSession]=useState({})
-    //console.log(session)
    const [isLoading, setIsLoading]=useState(true)
 
 
@@ -50,11 +45,13 @@ function Dashboard() {
                 const userSessions = await userSessionsData(id);
                         
                 setDatas(userDatas)
-                console.log("user",userDatas)
+                console.log(userDatas)
                 setActivity(userActivity)
-                console.log("user",userActivity)
+                console.log(userActivity)
                 setPerformance(userPerformance)
+                console.log(userPerformance)
                 setSession(userSessions)
+                console.log(userSessions)
                 setIsLoading(false)
 
             }catch(error) {

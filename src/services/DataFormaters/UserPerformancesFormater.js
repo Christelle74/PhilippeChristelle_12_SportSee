@@ -6,18 +6,18 @@ export default class UserPerformancesFormater {
   /**
    * The function takes in an object, and then assigns the values of the object to the properties of
    * the class.
+   * @param {Object} kind - user kind of performance datas
    * @param {Object} performances - user performances datas
    */
   constructor(performances, kind) {
+    this.id = performances.userId
     this.kindOfPerform = this.KindOfPerformance(kind)
-    console.log(this.kindOfPerform)
     this.formatPerformData = performances.data.map((performance, kind) => ({
       ...performance,
       kind: this.kindOfPerform[kind],
       value: performance.value,
     }))
     this.performData = this.formatPerformData.reverse()
-    console.log('datas', this.performData)
   }
 
   KindOfPerformance() {
@@ -29,7 +29,6 @@ export default class UserPerformancesFormater {
       'Vitesse',
       'Intensité',
     ]
-    //console.log(formatPerform)
     return formatPerform
   }
 }

@@ -15,7 +15,7 @@ export const GetMainData = async (id) => {
   try {
     const response = await fetch(url)
     const mainData = await response.json()
-    console.log(mainData.data)
+    //console.log(mainData.data)
     return mainData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -36,7 +36,7 @@ export const GetUserActivities = async (id) => {
   try {
     const response = await fetch(url)
     const activitiesData = await response.json()
-    console.log(activitiesData.data)
+    //console.log(activitiesData.data)
     return activitiesData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -58,7 +58,7 @@ export const GetUserAverageSessions = async (id) => {
   try {
     const response = await fetch(url)
     const averageSessionsData = await response.json()
-    console.log(averageSessionsData.data)
+    //console.log(averageSessionsData.data)
     return averageSessionsData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -77,14 +77,9 @@ export const GetUserPerformance = async (id) => {
     url = '/mockedPerformanceData.json'
   }
   try {
-    const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
+    const response = await fetch(url)
     const performanceData = await response.json()
-    console.log(performanceData.data)
+    //console.log(performanceData.data)
     return performanceData.data
   } catch (error) {
     console.log('=====error=====', error)

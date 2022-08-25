@@ -8,15 +8,12 @@ export default class MainDataFormater {
    * the class.
    * @param {Object} datas - main user datas
    */
-  constructor(datas) {
-    //console.log(datas)
-    this.id = datas.id
-    this.userFirstName = datas.userInfos.firstName
-    this.keyData = datas.keyData
-    this.todayScore = datas.todayScore || datas.score
+  constructor(data) {
+    this.id = data.id
+    this.userFirstName = data.userInfos.firstName
+    this.keyData = data.keyData
+    this.todayScore = data.todayScore || data.score
     this.score = this.formatScore(this.todayScore)
-    //console.log(this.userFirstName)
-    //console.log(this.id)
   }
 
   formatScore() {

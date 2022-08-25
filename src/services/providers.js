@@ -18,9 +18,8 @@ export async function userHeaderData(id) {
   let mainDatas = {}
 
   mainDatas = await GetMainData(id)
-  //console.log(mainDatas)
   const userData = new MainDataFormater(mainDatas)
-  console.log(userData)
+  //console.log(userData)
   return userData
 }
 
@@ -32,9 +31,8 @@ export async function userSessionsData(id) {
   let sessionsDatas = {}
 
   sessionsDatas = await GetUserAverageSessions(id)
-  console.log(sessionsDatas)
   const getAverageSessions = new UserSessionsFormater(sessionsDatas)
-  console.log(getAverageSessions)
+  //console.log(getAverageSessions)
   return getAverageSessions
 }
 
@@ -46,9 +44,8 @@ export async function userActivitiesData(id) {
   let activitiesDatas = {}
 
   activitiesDatas = await GetUserActivities(id)
-  //console.log(activitiesDatas)
   const getActivities = new UserActivitiesFormater(activitiesDatas)
-  console.log(getActivities)
+  //console.log(getActivities)
   return getActivities
 }
 
@@ -60,8 +57,7 @@ export async function userPerformancesData(id) {
   let performancesDatas = {}
 
   performancesDatas = await GetUserPerformance(id)
-  //console.log(performancesDatas)
   const getPerformances = new UserPerformancesFormater(performancesDatas)
-  console.log(getPerformances)
+  //console.log(getPerformances)
   return getPerformances
 }
