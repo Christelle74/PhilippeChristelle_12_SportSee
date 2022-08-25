@@ -1,10 +1,12 @@
 /**
  * It fetches data from a server and returns it
- * @param {Object} mockedDatas - Mocked main datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetMainData = async (mockedDatas, id) => {
+
+const mockedDatas = true
+
+export const GetMainData = async (id) => {
   let url = `http://localhost:3000/user/${id}`
 
   if (mockedDatas) {
@@ -13,7 +15,7 @@ export const GetMainData = async (mockedDatas, id) => {
   try {
     const response = await fetch(url)
     const mainData = await response.json()
-    //console.log(mainData.data)
+    console.log(mainData.data)
     return mainData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -22,11 +24,10 @@ export const GetMainData = async (mockedDatas, id) => {
 
 /**
  * It fetches data from a url and returns the data.
- * @param {Object} mockedDatas - Mocked activity datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserActivities = async (mockedDatas, id) => {
+export const GetUserActivities = async (id) => {
   let url = `http://localhost:3000/user/${id}/activity`
 
   if (mockedDatas) {
@@ -35,7 +36,7 @@ export const GetUserActivities = async (mockedDatas, id) => {
   try {
     const response = await fetch(url)
     const activitiesData = await response.json()
-    //console.log(activitiesData.data)
+    console.log(activitiesData.data)
     return activitiesData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -44,11 +45,10 @@ export const GetUserActivities = async (mockedDatas, id) => {
 
 /**
  * It fetches data from a url and returns the data.
- * @param {Object} mockedDatas - Mocked average sessions datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserAverageSessions = async (mockedDatas, id) => {
+export const GetUserAverageSessions = async (id) => {
   let url = `http://localhost:3000/user/${id}/average-sessions`
 
   if (mockedDatas) {
@@ -58,7 +58,7 @@ export const GetUserAverageSessions = async (mockedDatas, id) => {
   try {
     const response = await fetch(url)
     const averageSessionsData = await response.json()
-    //console.log(averageSessionsData.data)
+    console.log(averageSessionsData.data)
     return averageSessionsData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -67,20 +67,24 @@ export const GetUserAverageSessions = async (mockedDatas, id) => {
 
 /**
  * It fetches data from a url and returns the data in json format
- * @param {Object} mockedDatas - Mocked performances datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserPerformance = async (mockedDatas, id) => {
+export const GetUserPerformance = async (id) => {
   let url = `http://localhost:3000/user/${id}/performance`
 
   if (mockedDatas) {
     url = '/mockedPerformanceData.json'
   }
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
     const performanceData = await response.json()
-    //console.log(performanceData.data)
+    console.log(performanceData.data)
     return performanceData.data
   } catch (error) {
     console.log('=====error=====', error)

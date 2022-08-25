@@ -17,6 +17,7 @@ import carbsIcon from '../assets/icones/carbsIcon.png';
 import fatIcon from '../assets/icones/fatIcon.png';
 import proteinIcon from '../assets/icones/proteinIcon.png';
 
+import VerticalNavigation from '../components/VerticalNavigation.jsx';
 
 
 /**
@@ -24,18 +25,18 @@ import proteinIcon from '../assets/icones/proteinIcon.png';
  * @returns {JSX.Element} Dashboard component
  */
 function Dashboard() {
-    const {mockedDatas,id} = useParams();
-    //console.log(id)
+    const {id} = useParams();
+    console.log(id)
     const navigate = useNavigate()
     
     
-    const [datas, setDatas]=useState([])
+    const [datas, setDatas]=useState({})
     //console.log(datas)
-    const [activity, setActivity] = useState([])
+    const [activity, setActivity] = useState({})
     //console.log(activity)
-    const [performance, setPerformance] = useState([])
+    const [performance, setPerformance] = useState({})
     //console.log(performance)
-    const [session, setSession]=useState([])
+    const [session, setSession]=useState({})
     //console.log(session)
    const [isLoading, setIsLoading]=useState(true)
 
@@ -43,28 +44,31 @@ function Dashboard() {
     useEffect(()=>{
         (async()=>{
             try{
-                const userDatas =  await userHeaderData(mockedDatas, id);
-                const userActivity = await userActivitiesData(mockedDatas, id);
-                const userPerformance = await userPerformancesData(mockedDatas, id);
-                const userSessions = await userSessionsData(mockedDatas, id);
+                const userDatas =  await userHeaderData(id);
+                const userActivity = await userActivitiesData(id);
+                const userPerformance = await userPerformancesData(id);
+                const userSessions = await userSessionsData(id);
                         
                 setDatas(userDatas)
-                //console.log("user",userDatas)
+                console.log("user",userDatas)
                 setActivity(userActivity)
+                console.log("user",userActivity)
                 setPerformance(userPerformance)
                 setSession(userSessions)
                 setIsLoading(false)
 
             }catch(error) {
                 console.log('=====error=====', error)
-                navigate ("/ErrorPage");
+                navigate ("/Error");
             }
         })
         ()
-    }, [navigate, id, mockedDatas]);
+    }, [navigate, id]);
 
 
     return (
+        <>
+        <VerticalNavigation/>
         <div className='dashboard'>
             {isLoading ? "Loading..." :
             ( 
@@ -96,6 +100,7 @@ function Dashboard() {
             </>    
             )}  
         </div>
+        </>
     );
 };
 

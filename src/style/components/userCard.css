@@ -1,6 +1,5 @@
 
 .connectPage{
-    margin: 100px 90px 0 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +21,10 @@
     border-radius: 10px;
     background-color: #E60000;
 }
+
+.userCardsTitle{
+    margin-top: 100px;
+}
 .userCard:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px #E60000;
@@ -37,7 +40,7 @@
     display: flex;
     position: absolute;
     left:50px;
-    color: black;
+    color: white;
 }
 
 /* --------------------RESPONSIVE---------------- */

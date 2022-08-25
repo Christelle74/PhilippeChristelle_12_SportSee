@@ -15,7 +15,8 @@ export default class MainDataFormater {
     this.keyData = datas.keyData
     this.todayScore = datas.todayScore || datas.score
     this.score = this.formatScore(this.todayScore)
-    //console.log(this.score)
+    //console.log(this.userFirstName)
+    //console.log(this.id)
   }
 
   formatScore() {
