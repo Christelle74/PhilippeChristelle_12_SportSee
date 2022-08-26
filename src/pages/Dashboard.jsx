@@ -26,16 +26,12 @@ import VerticalNavigation from '../components/VerticalNavigation.jsx';
  */
 function Dashboard() {
     const {id} = useParams();
-    console.log(id)
+    //console.log(id)
     const navigate = useNavigate()
-
+    
     const [datas, setDatas]=useState({})
-    const [activity, setActivity] = useState({})
-    const [performance, setPerformance] = useState({})
-    const [session, setSession]=useState({})
-   const [isLoading, setIsLoading]=useState(true)
-
-
+    const [isLoading, setIsLoading]=useState(true)
+    
     useEffect(()=>{
         (async()=>{
             try{
@@ -43,20 +39,16 @@ function Dashboard() {
                 const userActivity = await userActivitiesData(id);
                 const userPerformance = await userPerformancesData(id);
                 const userSessions = await userSessionsData(id);
-                        
-                setDatas(userDatas)
-                console.log(userDatas)
-                setActivity(userActivity)
-                console.log(userActivity)
-                setPerformance(userPerformance)
-                console.log(userPerformance)
-                setSession(userSessions)
-                console.log(userSessions)
+               
+                setDatas({userDatas, userActivity, userPerformance, userSessions})
                 setIsLoading(false)
+                // if((!userDatas.id)===id){return navigate ("/Error")}
+                // console.log(userDatas.id)
+                // console.log(id)
 
             }catch(error) {
                 console.log('=====error=====', error)
-                navigate ("/Error");
+                navigate ("/Error")
             }
         })
         ()
@@ -72,26 +64,26 @@ function Dashboard() {
             <>
             <div className='dashboardHeader'>
                 <h1>Bonjour{' '}
-                    <span className='userName'>{datas.userFirstName}</span> 
+                    <span className='userName'>{datas.userDatas.userFirstName}</span> 
                 </h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </div>
             <div className='dashboardContent'>
                 <div className='graphContent'>
                     <div className='dailyActivityGraph'>
-                        <DailyActivityGraph activity={activity.sessions}/>
+                        <DailyActivityGraph activity={datas.userActivity.sessions}/>
                     </div>
                     <div className='otherGraph'>
-                        <SessionsGraph sessions={session.sessionsData}/>
-                        <PerformanceGraph performance={performance.performData}/>
-                        <ScoreGraph score={datas.score[0].value}/>
+                        <SessionsGraph sessions={datas.userSessions.sessionsData}/>
+                        <PerformanceGraph performance={datas.userPerformance.performData}/>
+                        <ScoreGraph score={datas.userDatas.score[0].value}/>
                     </div>
                 </div>
                 <div className='cards'>
-                    <Cards image={caloriesIcon} data={datas.keyData.calorieCount} unit="Kcal" text="Calories"/>
-                    <Cards image={proteinIcon} data={datas.keyData.proteinCount} unit="g" text="Protéines"/>
-                    <Cards image={carbsIcon} data={datas.keyData.lipidCount} unit="g" text="Glucides"/>
-                    <Cards image={fatIcon} data={datas.keyData.carbohydrateCount} unit="g" text="Lipides"/>
+                    <Cards image={caloriesIcon} data={datas.userDatas.keyData.calorieCount} unit="Kcal" text="Calories"/>
+                    <Cards image={proteinIcon} data={datas.userDatas.keyData.proteinCount} unit="g" text="Protéines"/>
+                    <Cards image={carbsIcon} data={datas.userDatas.keyData.lipidCount} unit="g" text="Glucides"/>
+                    <Cards image={fatIcon} data={datas.userDatas.keyData.carbohydrateCount} unit="g" text="Lipides"/>
                 </div>
             </div>
             </>    
