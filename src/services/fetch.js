@@ -14,7 +14,6 @@ export const GetMainData = async (id) => {
       url = '/mockedOnePersonData.json'
     }
     const response = await fetch(url)
-    console.log(response)
     const mainData = await response.json()
     console.log(mainData.data)
     return mainData.data

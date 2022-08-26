@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a></li><li></li><li></li><li></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Cards">Cards</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#DailyActivityGraph">DailyActivityGraph</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GetMainData">GetMainData</a></li><li><a href="global.html#GetUserActivities">GetUserActivities</a></li><li><a href="global.html#GetUserAverageSessions">GetUserAverageSessions</a></li><li><a href="global.html#GetUserPerformance">GetUserPerformance</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Logo">Logo</a></li><li><a href="global.html#PerformanceGraph">PerformanceGraph</a></li><li><a href="global.html#ScoreGraph">ScoreGraph</a></li><li><a href="global.html#SessionsGraph">SessionsGraph</a></li><li><a href="global.html#userActivitiesData">userActivitiesData</a></li><li><a href="global.html#UserCard">UserCard</a></li><li><a href="global.html#userHeaderData">userHeaderData</a></li><li><a href="global.html#userPerformancesData">userPerformancesData</a></li><li><a href="global.html#userSessionsData">userSessionsData</a></li><li><a href="global.html#VerticalNavigation">VerticalNavigation</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a></li><li></li><li></li><li></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Cards">Cards</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#DailyActivityGraph">DailyActivityGraph</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GetUserActivities">GetUserActivities</a></li><li><a href="global.html#GetUserAverageSessions">GetUserAverageSessions</a></li><li><a href="global.html#GetUserPerformance">GetUserPerformance</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Logo">Logo</a></li><li><a href="global.html#mockedDatas">mockedDatas</a></li><li><a href="global.html#PerformanceGraph">PerformanceGraph</a></li><li><a href="global.html#ScoreGraph">ScoreGraph</a></li><li><a href="global.html#SessionsGraph">SessionsGraph</a></li><li><a href="global.html#userActivitiesData">userActivitiesData</a></li><li><a href="global.html#UserCard">UserCard</a></li><li><a href="global.html#userHeaderData">userHeaderData</a></li><li><a href="global.html#userPerformancesData">userPerformancesData</a></li><li><a href="global.html#userSessionsData">userSessionsData</a></li><li><a href="global.html#VerticalNavigation">VerticalNavigation</a></li></ul>
 </nav>
 
 <div id="main">
@@ -44,42 +44,42 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * It fetches data from a server and returns it
- * @param {Object} mockedDatas - Mocked main datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetMainData = async (mockedDatas, id) => {
+
+const mockedDatas = false
+
+export const GetMainData = async (id) => {
   let url = `http://localhost:3000/user/${id}`
 
-  if (mockedDatas) {
-    url = '/mockedOnePersonData.json'
-  }
   try {
+    if (mockedDatas) {
+      url = '/mockedOnePersonData.json'
+    }
     const response = await fetch(url)
     const mainData = await response.json()
-    //console.log(mainData.data)
+    console.log(mainData.data)
     return mainData.data
   } catch (error) {
     console.log('=====error=====', error)
   }
 }
-
 /**
- * It fetches data from a url and returns the data.
- * @param {Object} mockedDatas - Mocked activity datas
+ * It fetches data from a url and returns the activity datas
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserActivities = async (mockedDatas, id) => {
+export const GetUserActivities = async (id) => {
   let url = `http://localhost:3000/user/${id}/activity`
 
-  if (mockedDatas) {
-    url = '/mockedActivityData.json'
-  }
   try {
+    if (mockedDatas) {
+      url = '/mockedActivityData.json'
+    }
     const response = await fetch(url)
     const activitiesData = await response.json()
-    //console.log(activitiesData.data)
+    console.log(activitiesData.data)
     return activitiesData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -87,22 +87,20 @@ export const GetUserActivities = async (mockedDatas, id) => {
 }
 
 /**
- * It fetches data from a url and returns the data.
- * @param {Object} mockedDatas - Mocked average sessions datas
+ * It fetches data from a url and returns the average session datas.
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserAverageSessions = async (mockedDatas, id) => {
+export const GetUserAverageSessions = async (id) => {
   let url = `http://localhost:3000/user/${id}/average-sessions`
 
-  if (mockedDatas) {
-    url = '/mockedAverageSessionData.json'
-  }
-
   try {
+    if (mockedDatas) {
+      url = '/mockedAverageSessionData.json'
+    }
     const response = await fetch(url)
     const averageSessionsData = await response.json()
-    //console.log(averageSessionsData.data)
+    console.log(averageSessionsData.data)
     return averageSessionsData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -110,21 +108,20 @@ export const GetUserAverageSessions = async (mockedDatas, id) => {
 }
 
 /**
- * It fetches data from a url and returns the data in json format
- * @param {Object} mockedDatas - Mocked performances datas
+ * It fetches data from a url and returns the performances datas.
  * @param {Number} id - The id of the user
  * @returns {Promise}
  */
-export const GetUserPerformance = async (mockedDatas, id) => {
+export const GetUserPerformance = async (id) => {
   let url = `http://localhost:3000/user/${id}/performance`
 
-  if (mockedDatas) {
-    url = '/mockedPerformanceData.json'
-  }
   try {
+    if (mockedDatas) {
+      url = '/mockedPerformanceData.json'
+    }
     const response = await fetch(url)
     const performanceData = await response.json()
-    //console.log(performanceData.data)
+    console.log(performanceData.data)
     return performanceData.data
   } catch (error) {
     console.log('=====error=====', error)
@@ -144,7 +141,7 @@ export const GetUserPerformance = async (mockedDatas, id) => {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Mon Aug 22 2022 11:41:01 GMT+0200 (heure d’été d’Europe centrale) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Fri Aug 26 2022 15:46:00 GMT+0200 (heure d’été d’Europe centrale) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -9,7 +9,6 @@ import PropTypes from 'prop-types'
  * @returns {JSX.Element} UserCard component
  */
 const UserCard = (data) => {
-    //console.log(data)
     return (
         <Link to={`/user/${data.id}`} className='userCard'>
             <li >
